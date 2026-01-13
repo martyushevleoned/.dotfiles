@@ -1,0 +1,16 @@
+NamespaceIndentation: None
+
+BreakBeforeBraces: Allman
+AllowShortFunctionsOnASingleLine: None
+
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+AccessModifierOffset: -4
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+AlwaysBreakTemplateDeclarations: Yes
+
+ColumnLimit: 100
+EmptyLineBeforeAccessModifier: Never

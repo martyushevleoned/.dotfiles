@@ -1,0 +1,4 @@
+--ignore=\.git
+--ignore=\.gitignore
+--ignore=\.stowrc
+--ignore=readme.md

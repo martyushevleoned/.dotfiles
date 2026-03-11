@@ -14,12 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Плагины
 require('lazy').setup({
-    {
-        'sainnhe/sonokai',
+    { -- Цветовая схема
+        'navarasu/onedark.nvim',
         priority = 1000,
         config = function()
-            vim.g.sonokai_enable_italic = true
-            vim.cmd.colorscheme('sonokai')
+            require('onedark').setup({ style = 'darker' }) -- style = 'dark' / 'darker' / 'cool' / 'deep' / 'warm' / 'warmer' / 'light'
+            require('onedark').load()
         end
     },
     { -- Иконки

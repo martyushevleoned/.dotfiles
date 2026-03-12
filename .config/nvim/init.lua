@@ -84,6 +84,7 @@ require('lazy').setup({
 vim.keymap.set('n', '<F1>', ':NvimTreeToggle<CR>', { noremap = true })
 vim.keymap.set('n', '<F2>', ':Telescope live_grep<CR>', { noremap = true })
 vim.keymap.set('n', '<F3>', ':Telescope find_files<CR>', { noremap = true })
+vim.keymap.set('n', '<F4>', ':DiffviewOpen HEAD~1<CR>', { noremap = true })
 
 -- Настройки VIM
 vim.opt.number=true

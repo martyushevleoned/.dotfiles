@@ -28,7 +28,10 @@ require('lazy').setup({
     { -- Древовидный explorer
         'nvim-tree/nvim-tree.lua',
         config = function()
-            require('nvim-tree').setup()
+            require('nvim-tree').setup({
+                git = { ignore = false },
+                filters = { dotfiles = false },
+            })
         end,
     },
     { -- Буфферы

@@ -8,11 +8,10 @@ sync_dotfiles()
 
 checksum()
 {
+    pushd ${1:-.}
     local output=${2:-checksum.log}
-    echo '' > $output
-	for src in $(find ${1:-.} -type f | sort); do
-		md5sum $src >> $output  
-	done
+    find . -type f | sort | grep -v "$output" | xargs -I {} md5sum '{}' > "$output"
+    popd
 }
 
 extract()
@@ -29,10 +28,6 @@ extract()
 			dst=${archive%.tar}
 			mkdir -p $dst
 			tar -x -f $archive -C $dst
-			;;
-		*\.zip)
-            dst=${archive%.zip}
-			unzip -q $archive
 			;;
 	esac
 	echo $dst

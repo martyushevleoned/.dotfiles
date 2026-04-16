@@ -8,5 +8,5 @@ alias utils='~/.utils.sh'
     alias dev-shell='nix-shell ~/.config/nix/dev.nix --run $SHELL'
     alias python-shell='nix-shell ~/.config/nix/python.nix --run $SHELL'
     [ -z "$(which nvim)" ] && nvim() { nix-shell -p neovim --run "nvim $@"; }
-    [ -z "$(which vim)" ] && vim() { nix-shell -p vim --run "vim $@"; }
+    [ -z "$(which hx)" ] && hx() { nix-shell -p helix --run "hx $@"; }
 }

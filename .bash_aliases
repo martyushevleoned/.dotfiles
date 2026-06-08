@@ -5,8 +5,7 @@ alias utils='~/.utils.sh'
 
 # nix
 [ -n "$(which nix-shell)" ] && {
-    alias dev-shell='nix-shell ~/.config/nix/dev.nix --run $SHELL'
-    alias python-shell='nix-shell ~/.config/nix/python.nix --run $SHELL'
-    [ -z "$(which nvim)" ] && nvim() { nix-shell -p neovim --run "nvim $@"; }
     [ -z "$(which hx)" ] && hx() { nix-shell -p helix --run "hx $@"; }
+    [ -z "$(which nvim)" ] && nvim() { nix-shell -p neovim --run "nvim $@"; }
+    [ -z "$(which opencode)" ] && opencode() { nix-shell -p opencode --run "opencode $@"; }
 }

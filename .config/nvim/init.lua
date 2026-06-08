@@ -81,13 +81,17 @@ require('lazy').setup({
 })
 
 -- Бинды
-vim.keymap.set('t', '<C-]>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set({'n', 't'}, '<C-]>', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<F1>', ':NvimTreeToggle<CR>', { noremap = true })
 vim.keymap.set('n', '<F2>', ':Telescope live_grep<CR>', { noremap = true })
 vim.keymap.set('n', '<F3>', ':Telescope find_files<CR>', { noremap = true })
 vim.keymap.set('n', '<F4>', ':DiffviewOpen HEAD~1<CR>', { noremap = true })
 vim.keymap.set({'n', 't'}, '<F5>', '<C-\\><C-n>:set scrollback=1 <bar> set scrollback=10000<CR>i', { noremap = true })
 vim.keymap.set({'n', 'v'}, '<F6>', function() require('hop').hint_words() end, { noremap = true })
+vim.keymap.set('n', '<F7>', ':!git commit -a --amend --no-edit<CR>', { noremap = true })
+vim.keymap.set('t', '<F7>', 'git commit -a --amend --no-edit<CR>', { noremap = true })
+vim.keymap.set('n', '<F8>', ':!git add . && git commit -am \'\'<Left>', { noremap = true })
+vim.keymap.set('t', '<F8>', 'git add . && git commit -am \'\'<Left>', { noremap = true })
 
 -- Настройки VIM
 vim.opt.number=true

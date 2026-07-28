@@ -100,7 +100,8 @@ require('lazy').setup({
 
 -- Utils
 vim.keymap.set({'n', 't'}, '<C-]>', '<C-\\><C-n>', { noremap = true })
-vim.keymap.set({'n', 't'}, '<leader>l', '<C-\\><C-n>:set scrollback=1 <bar> set scrollback=10000<CR>i', { noremap = true })
+vim.keymap.set({'n', 't'}, '<leader>l', '<C-\\><C-n>:set scrollback=1 <bar> set scrollback=10000<CR>', { noremap = true })
+vim.keymap.set('n', '<leader>c', ':%bd!<CR>', { noremap = true })
 -- Git
 vim.keymap.set('n', '<leader>ga', ':!git commit -a --amend --no-edit<CR>', { noremap = true })
 vim.keymap.set('t', '<leader>ga', 'git commit -a --amend --no-edit<CR>', { noremap = true })

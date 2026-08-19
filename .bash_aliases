@@ -1,4 +1,8 @@
-#utils
+# custom utils
+[ -n "$(which make)" ] && make -C $HOME/.utils > /dev/null
+PATH=$PATH:$HOME/.utils/bin
+
+# bash utils
 alias utils='~/.utils.sh'
 [ -f ~/.study.sh ] && alias study='~/.study.sh'
 [ -f ~/.work.sh ] && alias work='~/.work.sh'

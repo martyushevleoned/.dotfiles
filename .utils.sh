@@ -80,9 +80,13 @@ wm()
 {
     niri()
     {
-        # sudo usermod -a -G video $USER
+        # sudo usermod -aG video $USER
         # nix --extra-experimental-features 'nix-command flakes' profile install --impure github:guibou/nixGL
-        nix-shell -p niri alacritty fuzzel waybar --run 'nixGL dbus-run-session niri --session' 2>&1 | tee /tmp/niri.log
+        nix-shell -p niri alacritty fuzzel waybar wofi mako grim slurp wl-clipboard brightnessctl pavucontrol --run 'nixGL dbus-run-session niri --session' 2>&1 | tee /tmp/niri.log
+    }
+    dwm()
+    {
+        sudo xinit dwm
     }
     $@
 }

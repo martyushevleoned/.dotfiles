@@ -1,11 +1,6 @@
 # custom utils
-[ -n "$(which make)" ] && make -C $HOME/.utils > /dev/null
-PATH=$PATH:$HOME/.utils/bin
-
-# bash utils
-alias utils='~/.utils.sh'
-[ -f ~/.study.sh ] && alias study='~/.study.sh'
-[ -f ~/.work.sh ] && alias work='~/.work.sh'
+[ -n "$(which make)" ] && make -C $HOME/.utils > /dev/null && PATH=$PATH:$HOME/.utils/bin
+[ -n "$(which bash)" ] && PATH=$PATH:$HOME/.utils/shell
 
 # nix
 [ -n "$(which nix-shell)" ] && {

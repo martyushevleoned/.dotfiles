@@ -54,6 +54,6 @@ int main(int argc, char* argv[])
 {
     const Args args{parseArgs(argc, argv).get()}; // TODO check Result
     const std::string hash{checksum(args.filename, args.checksumSize).get()}; // TODO checksum of many files. use fnmatch
-    std::cout << args.filename << "\t" << hash << std::endl;
+    std::cout << hash << "\t" << args.filename << std::endl;
     return EXIT_SUCCESS;
 }

@@ -1,9 +1,9 @@
+#!/bin/bash
+
 sync_dotfiles()
 {
     local host=$1
     rsync -av --delete ~/.dotfiles/ $host:~/.dotfiles/ --exclude '.git'
-    [ -f ~/.study.sh ] && rsync -av ~/.study.sh $host:~/.study.sh
-    [ -f ~/.work.sh ] && rsync -av ~/.work.sh $host:~/.work.sh
 }
 
 checksum()
@@ -44,7 +44,7 @@ unwrap()
 compare()
 {
     local dump1=`mktemp` dump2=`mktemp`
-    local variant=('cat' 'hexdump -C' 'strings' 'objdump -s' 'readelf -a') parser=${variant[0]}
+    local variant=('cat' 'hexdump -C' 'strings' 'objdump -s' 'readelf -a') parser=${variant[2]}
     local variant=('diff' 'meld' 'nvim') comparator=${variant[0]}
     local sources=($([ -z "${2:-}" ] && $(ls $1) || echo "$1 $2"))
     $parser ${sources[0]} > $dump1
